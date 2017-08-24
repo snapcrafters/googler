@@ -9,7 +9,8 @@ description: |
   Supports sequential searches in a single googler instance.
   googler isn't affiliated to Google in any way.
 
-confinement: devmode
+grade: stable
+confinement: strict
 
 apps:
   googler:
