@@ -1,5 +1,5 @@
 name: googler
-version: '3.3'
+version: '3.4'
 summary: power tool to Google (Web & News) and Google Site Search from the command-line
 description: |
   googler is a power tool to Google (Web & News) and Google Site
@@ -22,6 +22,6 @@ apps:
 parts:
   googler:
     plugin: make
-    source: https://github.com/jarun/googler/archive/v3.3.tar.gz
+    source: https://github.com/jarun/googler/archive/v3.4.tar.gz
     prepare: make disable-self-upgrade
     stage-packages: [python3]
