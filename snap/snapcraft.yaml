@@ -1,5 +1,6 @@
 name: googler
-version: '3.4'
+version: 'master'
+version-script: git -C parts/googler/build describe --tags
 summary: power tool to Google (Web & News) and Google Site Search from the command-line
 description: |
   googler is a power tool to Google (Web & News) and Google Site
@@ -22,6 +23,15 @@ apps:
 parts:
   googler:
     plugin: make
-    source: https://github.com/jarun/googler/archive/v3.4.tar.gz
-    prepare: make disable-self-upgrade
+    source: https://github.com/jarun/googler.git
+    prepare: |
+      last_committed_tag="$(git describe --tags --abbrev=0)"
+      last_released_tag="$(snap info googler | awk '$1 == "beta:" { print $2 }')"
+      # If the latest tag from the upstream project has not been released to
+      # beta, build that tag instead of master.
+      if [ "${last_committed_tag}" != "${last_released_tag}" ]; then
+        git fetch
+        git checkout "${last_committed_tag}"
+      fi
+      make disable-self-upgrade
     stage-packages: [python3]
