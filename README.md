@@ -7,16 +7,13 @@
 <p align="center"><b>This is the snap for googler</b>, <i>"power tool to Google (Web &amp; News) and Google Site Search from the command-line"</i>. It works on Ubuntu, Fedora, Debian, and other major Linux
 distributions.</p>
 
-<!-- Uncomment and modify this when you are provided a build status badge
 <p align="center">
-<a href="https://build.snapcraft.io/user/snapcrafters/fork-and-rename-me"><img src="https://build.snapcraft.io/badge/snapcrafters/fork-and-rename-me.svg" alt="Snap Status"></a>
+<a href="https://build.snapcraft.io/user/snapcrafters/googler"><img src="https://build.snapcraft.io/badge/snapcrafters/googler.svg" alt="Snap Status"></a>
 </p>
--->
 
 ## Install
 
-    sudo apt install snapd-xdg-open
-    sudo snap install googler --beta
+    snap install googler
 
 ([Don't have snapd installed?](https://snapcraft.io/docs/core/install))
 
@@ -48,17 +45,17 @@ upstream so googler can authoritatively publish future releases.
   - [x] Update the install instructions in this `README.md`
   - [x] Post a call for testing on the [Snapcraft Forum](https://forum.snapcraft.io) - [link](https://forum.snapcraft.io/t/call-for-testing-googler/1842)
   - [ ] Ask a [Snapcrafters admin](https://github.com/orgs/snapcrafters/people?query=%20role%3Aowner) to fork your repo into github.com/snapcrafters, transfer the snap name from you to snapcrafters, and configure the repo for automatic publishing into edge on commit
-  - [ ] Add the provided Snapcraft build badge to this `README.md`
-  - [ ] Publish the snap in the Snap store stable channel
-  - [ ] Update the install instructions in this `README.md`
-  - [ ] Post an announcement in the [Snapcraft Forum](https://forum.snapcraft.io) - [link]()
-  - [ ] Submit a pull request or patch upstream that adds snap install documentation - [link]()
-  - [ ] Submit a pull request or patch upstream that adds the `snapcraft.yaml` and any required assets/launchers - [link]()
+  - [x] Add the provided Snapcraft build badge to this `README.md`
+  - [x] Publish the snap in the Snap store stable channel
+  - [x] Update the install instructions in this `README.md`
+  - [ ] Post an announcement in the [Snapcraft Forum](https://forum.snapcraft.io)
+  - [ ] Submit a pull request or patch upstream that adds snap install documentation
+  - [ ] Submit a pull request or patch upstream that adds the `snapcraft.yaml` and any required assets/launchers
   - [ ] Add upstream contact information to the `README.md`  
   - If upstream accept the PR:
     - [ ] Request upstream create a Snap store account
     - [ ] Contact the Snap Advocacy team to request the snap be transferred to upstream
-  - [ ] Ask the Snap Advocacy team to celebrate the snap - [link]()
+  - [ ] Ask the Snap Advocacy team to celebrate the snap
 
 If you have any questions, [post in the Snapcraft forum](https://forum.snapcraft.io).
 
