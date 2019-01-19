@@ -1,6 +1,5 @@
 name: googler
-version: 'master'
-version-script: git -C parts/googler/build describe --tags | sed 's/v//'
+adopt-info: googler
 summary: power tool to Google (Web & News) and Google Site Search from the command-line
 description: |
   googler is a power tool to Google (Web & News) and Google Site
@@ -24,17 +23,19 @@ parts:
   googler:
     plugin: make
     source: https://github.com/jarun/googler.git
-    override-build: |
+    make-parameters:
+      - disable-self-upgrade
+    override-pull: |
+      snapcraftctl pull
       last_committed_tag="$(git describe --tags --abbrev=0)"
-      last_committed_tag_ver="$(echo ${last_committed_tag} | sed 's/v//')"
-      last_released_tag="$(snap info googler | awk '$1 == "beta:" { print $2 }')"
+      last_released_tag="$(snap info $SNAPCRAFT_PROJECT_NAME | awk '$1 == "beta:" { print $2 }')"
       # If the latest tag from the upstream project has not been released to
       # beta, build that tag instead of master.
-      if [ "${last_committed_tag_ver}" != "${last_released_tag}" ]; then
+      if [ "${last_committed_tag}" != "${last_released_tag}" ]; then
         git fetch
         git checkout "${last_committed_tag}"
+        snapcraftctl set-version "${last_committed_tag#v}"
+      else
+        snapcraftctl set-version "$(git rev-parse --short HEAD)"
       fi
-      make disable-self-upgrade
-      snapcraftctl build
-    stage-packages:
-      - python3
+    stage-packages: [python3]
