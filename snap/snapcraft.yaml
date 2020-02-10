@@ -8,14 +8,14 @@ description: |
   terminal. Results are fetched in pages (with page navigation).
   Supports sequential searches in a single googler instance.
   googler isn't affiliated to Google in any way.
-
+base: core18
 grade: stable
 confinement: strict
 
 apps:
   googler:
     command: usr/local/bin/googler
-    plugs: [desktop, network]
+    plugs: [desktop, network, x11]
     environment:
       PYTHONIOENCODING: utf-8
 
@@ -38,4 +38,4 @@ parts:
       else
         snapcraftctl set-version "$(git rev-parse --short HEAD)"
       fi
-    stage-packages: [python3]
+    stage-packages: [python3, xsel, xclip]
