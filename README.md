@@ -1,3 +1,7 @@
+**DEPRECATED: the developer stopped maintaining this application and it's not compatible with current Google APIs anymore.**
+
+_Goodbye and thanks for all the fish!_
+
 <h1 align="center">
   <img src="https://img.shields.io/github/release/jarun/googler.svg?maxAge=600" alt="Project">
   <br />
